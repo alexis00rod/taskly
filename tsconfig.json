@@ -23,8 +23,10 @@
     /* Alias route */
     "baseUrl": "./src",
     "paths": {
+      "@styles": ["styles/index.css"],
       "@components": ["components/index.ts"],
-      "@styles": ["styles/index.css"]
+      "@pages": ["pages/index.ts"],
+      "@routes": ["routes/index.ts"]
     }
   },
   "include": ["src"],
