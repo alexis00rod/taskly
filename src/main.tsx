@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { App } from "./components";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { App } from "@components";
+import "@styles";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />}></Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
