@@ -23,7 +23,8 @@
     /* Alias route */
     "baseUrl": "./src",
     "paths": {
-      "@components": ["components/index.ts"]
+      "@components": ["components/index.ts"],
+      "@styles": ["styles/index.css"]
     }
   },
   "include": ["src"],
