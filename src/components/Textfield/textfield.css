@@ -1,0 +1,43 @@
+/* Base */
+.textfield {
+  @apply relative mt-[10px] mb-[25px] flex flex-col;
+}
+/* Label */
+.textfield-label {
+  @apply absolute top-1/2 -translate-y-1/2 left-[10px] px-[5px] flex items-center duration-200 cursor-text select-none;
+}
+/* Input */
+.textfield-input {
+  @apply h-[50px] flex flex-none px-[15px] outline-none bg-customWhite border border-customBlack rounded-md;
+}
+/* Is focus */
+.textfield.focus .textfield-label {
+  @apply top-0 bg-customWhite text-[0.9rem] cursor-default;
+}
+.textfield:focus-within .textfield-label {
+  @apply text-customPurple;
+}
+.textfield:focus-within .textfield-input {
+  @apply border-none ring-2 ring-customPurple;
+}
+/* Message */
+.textfield-message {
+  @apply absolute left-[15px];
+  top: calc(100% + 3px);
+}
+.textfield-message p {
+  @apply text-[0.8rem];
+}
+/* Is error */
+.textfield.error .textfield-label {
+  @apply text-red-500;
+}
+.textfield.error .textfield-input {
+  @apply border-red-500;
+}
+.textfield:focus-within.error .textfield-input {
+  @apply ring-red-500;
+}
+.textfield.error .textfield-message p {
+  @apply text-red-500;
+}
