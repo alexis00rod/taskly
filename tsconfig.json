@@ -23,9 +23,11 @@
     /* Alias route */
     "baseUrl": "./src",
     "paths": {
+      "@assets/*": ["assets/*"],
       "@styles": ["styles/index.css"],
       "@components": ["components/index.ts"],
       "@pages": ["pages/index.ts"],
+      "@pages/*": ["pages/*"],
       "@routes": ["routes/index.ts"]
     }
   },
