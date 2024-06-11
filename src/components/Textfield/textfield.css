@@ -8,7 +8,7 @@
 }
 /* Input */
 .textfield-input {
-  @apply h-[50px] flex flex-none px-[15px] outline-none bg-customWhite border border-customBlack rounded-md;
+  @apply h-[44px] flex flex-none px-[15px] outline-none bg-customWhite border border-customBlack rounded-md;
 }
 /* Is focus */
 .textfield.focus .textfield-label {
