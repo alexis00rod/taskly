@@ -3,9 +3,11 @@ import { AuthRoute } from "@routes";
 
 const App: React.FC = () => {
   return (
-    <Routes>
-      <Route path="/auth/*" element={<AuthRoute />} />
-    </Routes>
+    <div className="app">
+      <Routes>
+        <Route path="/auth/*" element={<AuthRoute />} />
+      </Routes>
+    </div>
   );
 };
 
