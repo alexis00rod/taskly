@@ -3,6 +3,7 @@
 /* Components */
 @import url("../components/App/app.css");
 @import url("../components/Textfield/textfield.css");
+@import url("../components/Button/button.css");
 /* Pages */
 @import url("../pages/AuthPage/authPage.css");
 
