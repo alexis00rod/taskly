@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { validateLogin } from "@pages/AuthPage/utils";
+import { validateEmail } from "@utils";
 import { Button, Textfield } from "@components";
 
 const Login: React.FC = () => {
@@ -18,7 +18,7 @@ const Login: React.FC = () => {
   const submitLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoginLoader(true);
-    const err: string[] = validateLogin(login);
+    const err: string[] = validateEmail(login);
 
     if (err.length > 0) {
       setLoginError(err);
