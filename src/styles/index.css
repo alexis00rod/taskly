@@ -4,6 +4,7 @@
 @import url("../components/App/app.css");
 @import url("../components/Textfield/textfield.css");
 @import url("../components/Button/button.css");
+@import url("../components/Icon/icon.css");
 /* Pages */
 @import url("../pages/AuthPage/authPage.css");
 
