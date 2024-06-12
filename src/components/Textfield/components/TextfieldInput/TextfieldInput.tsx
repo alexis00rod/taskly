@@ -1,11 +1,33 @@
 import { useTextfieldContext } from "../../TextfieldContext";
 
-const TextfieldInput: React.FC = () => {
-  const { id, name, value, onChange, handleFocus, handleNoFocus } =
-    useTextfieldContext();
+interface TextfieldInputProps {
+  type?: string;
+  name: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const TextfieldInput: React.FC<TextfieldInputProps> = ({
+  type = "text",
+  name,
+  value,
+  onChange,
+}) => {
+  const { id, setFocus } = useTextfieldContext();
+
+  const handleFocus = () => {
+    setFocus(true);
+  };
+
+  const handleNoFocus = () => {
+    if (!value) {
+      setFocus(false);
+    }
+  };
+
   return (
     <input
-      type="text"
+      type={type}
       id={id}
       name={name}
       value={value}
