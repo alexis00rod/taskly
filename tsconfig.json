@@ -28,7 +28,8 @@
       "@components": ["components/index.ts"],
       "@pages": ["pages/index.ts"],
       "@pages/*": ["pages/*"],
-      "@routes": ["routes/index.ts"]
+      "@routes": ["routes/index.ts"],
+      "@utils": ["utils/index.ts"]
     }
   },
   "include": ["src"],
