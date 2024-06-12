@@ -10,7 +10,7 @@
 }
 /* Container */
 .authPage-container {
-  @apply md:absolute md:left-1/2 md:-translate-x-1/2 md:top-[15vh] w-full md:w-max lg:w-[450px] h-full md:h-max mx-auto pt-[15vh] md:pt-8 p-8 flex flex-col items-center bg-customWhite md:rounded-md md:shadow-sm md:shadow-customDarkTheme/30;
+  @apply md:absolute md:left-1/2 md:-translate-x-1/2 md:top-[15vh] w-full md:w-max lg:w-[450px] h-full md:h-max mx-auto pt-[15vh] md:pt-10 p-10 flex flex-col items-center gap-4 bg-customWhite md:rounded-md md:shadow-sm md:shadow-customDarkTheme/30;
 }
 /* Header */
 .authPage-header {
@@ -22,7 +22,21 @@
 .authPage-header p {
   @apply mb-2 text-sm text-center;
 }
+/* Form */
+.authPage-form {
+  @apply w-full flex flex-col;
+}
+.authPage-form h3 {
+  @apply font-medium text-center;
+}
+/* Open with */
+.authPage-open {
+  @apply mt-2 w-full flex flex-col;
+}
+.authPage-open p {
+  @apply mb-2 text-sm text-center;
+}
 /* Links */
 .authPage-links {
-  @apply w-full flex justify-between;
+  @apply w-full flex flex-col items-center sm:flex-row justify-center gap-x-4;
 }
