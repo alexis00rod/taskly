@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { validateLoginConfirm } from "@pages/AuthPage/utils";
+import { validatePassword } from "@utils";
 import { Button, Icon, Textfield } from "@components";
 
 const LoginConfirm = () => {
@@ -19,7 +19,7 @@ const LoginConfirm = () => {
   const submitLoginConfirm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoginConfirmLoader(true);
-    const err: string[] = validateLoginConfirm(loginConfirm);
+    const err: string[] = validatePassword(loginConfirm);
 
     if (err.length > 0) {
       setLoginConfirmError(err);
@@ -55,6 +55,7 @@ const LoginConfirm = () => {
         id="email"
         error={
           loginConfirmError.includes("password-empty") ||
+          loginConfirmError.includes("password-format") ||
           loginConfirmError.includes("password-invalid")
         }
       >
@@ -68,6 +69,8 @@ const LoginConfirm = () => {
         <Textfield.Message>
           {(loginConfirmError.includes("password-empty") &&
             "Por favor, ingresa tu contraseña.") ||
+            (loginConfirmError.includes("password-format") &&
+              "La contraseña debe tener al menos 8 caracteres, incluyendo letras y números.") ||
             (loginConfirmError.includes("password-invalid") &&
               "La contraseña ingresada no es válida. Por favor, intenta nuevamente")}
         </Textfield.Message>
