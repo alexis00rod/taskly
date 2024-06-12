@@ -1,6 +1,6 @@
 import { ReactNode, useRef, useState, MouseEvent } from "react";
-import createEffect from "./buttonEffect";
 import { Link } from "react-router-dom";
+import createEffect from "./buttonEffect";
 
 interface ButtonProps {
   children: ReactNode;
@@ -13,6 +13,7 @@ interface ButtonProps {
   margin?: string;
   loader?: boolean;
   disabled?: boolean;
+  justify?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -26,6 +27,7 @@ const Button: React.FC<ButtonProps> = ({
   fullWidth,
   loader,
   disabled,
+  justify,
 }) => {
   const [ripples, setRipples] = useState<
     { x: number; y: number; size: number }[]
@@ -33,9 +35,11 @@ const Button: React.FC<ButtonProps> = ({
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const buttonStyle = () =>
-    `btn ${variant ? `btn-${variant}` : "btn-contained"} ${
-      color ? `btn-${color}` : "btn-primary"
-    } ${margin ? margin : ""} ${fullWidth ? "w-full" : "w-max"}`;
+    `btn btn-${justify ? justify : "center"} ${
+      variant ? `btn-${variant}` : "btn-contained"
+    } ${color ? `btn-${color}` : "btn-primary"} ${margin ? margin : ""} ${
+      fullWidth ? "w-full" : "w-max"
+    }`;
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     createEffect(event, buttonRef, setRipples);

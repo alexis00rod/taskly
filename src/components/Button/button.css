@@ -1,6 +1,13 @@
 /* Base */
 .btn {
-  @apply relative h-[44px] flex items-center justify-center gap-[8px] leading-4 rounded-md duration-200 cursor-pointer overflow-hidden outline-none;
+  @apply relative h-[44px] flex items-center gap-[8px] leading-4 rounded-md duration-200 cursor-pointer overflow-hidden outline-none;
+}
+/* Justify */
+.btn-center {
+  @apply justify-center;
+}
+.btn-between {
+  @apply justify-between;
 }
 /* Variants */
 .btn-link {
@@ -28,7 +35,7 @@
   @apply absolute top-0 left-0 right-0 bottom-0 z-0 pointer-events-none;
 }
 .ripple {
-  @apply absolute bg-customBlack/20 rounded-full pointer-events-none;
+  @apply absolute bg-customBlack/15 rounded-full pointer-events-none;
   transform: scale(0);
   animation: ripple-animation 600ms linear;
 }
