@@ -4,15 +4,15 @@
 }
 /* Label */
 .textfield-label {
-  @apply absolute top-1/2 -translate-y-1/2 left-[10px] px-[5px] flex items-center duration-200 cursor-text select-none;
+  @apply absolute top-0 left-[10px] h-[44px] px-[5px] flex items-center transition-transform cursor-text select-none;
 }
 /* Input */
 .textfield-input {
-  @apply h-[44px] flex flex-none px-[15px] outline-none bg-customWhite border border-customBlack rounded-md;
+  @apply h-[44px] flex flex-none px-[15px] transition-colors outline-none bg-customWhite border border-customBlack rounded-md;
 }
 /* Is focus */
 .textfield.focus .textfield-label {
-  @apply top-0 bg-customWhite text-[0.9rem] cursor-default;
+  @apply h-[20px] -translate-y-[9px] bg-customWhite text-[0.9rem] cursor-default;
 }
 .textfield:focus-within .textfield-label {
   @apply text-customPurple;
@@ -22,8 +22,7 @@
 }
 /* Message */
 .textfield-message {
-  @apply absolute left-[15px];
-  top: calc(100% + 3px);
+  @apply ml-[15px] mt-[3px];
 }
 .textfield-message p {
   @apply leading-4 text-[0.8rem];
