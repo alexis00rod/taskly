@@ -8,7 +8,7 @@ const AuthRoute: React.FC = () => {
       <Route path="/" element={<Navigate to="/auth/login" replace />} />
       <Route path="/" element={<AuthPage />}>
         <Route path="login" element={<Login />} />
-        <Route path="login/confirm" element={<LoginConfirm />} />
+        <Route path="login/:email" element={<LoginConfirm />} />
         <Route path="signup" element={<Signup />} />
       </Route>
     </Routes>

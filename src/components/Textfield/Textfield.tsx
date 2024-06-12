@@ -5,9 +5,6 @@ import { TextfieldInput, TextfieldLabel, TextfieldMessage } from "./components";
 interface TextfieldProps {
   children: ReactNode;
   id: string;
-  name: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   error?: boolean;
 }
 
@@ -17,30 +14,11 @@ interface TextfieldComponent extends React.FC<TextfieldProps> {
   Message: typeof TextfieldMessage;
 }
 
-const Textfield: TextfieldComponent = ({
-  children,
-  id,
-  name,
-  value,
-  onChange,
-  error,
-}) => {
+const Textfield: TextfieldComponent = ({ children, id, error }) => {
   const [focus, setFocus] = useState<boolean>(false);
 
-  const handleFocus = () => {
-    setFocus(true);
-  };
-
-  const handleNoFocus = () => {
-    if (!value) {
-      setFocus(false);
-    }
-  };
-
   return (
-    <TextfieldContext.Provider
-      value={{ id, name, value, onChange, handleFocus, handleNoFocus }}
-    >
+    <TextfieldContext.Provider value={{ id, setFocus }}>
       <div
         className={`textfield ${focus ? "focus" : ""} ${error ? "error" : ""}`}
       >
