@@ -29,6 +29,12 @@
 .authPage-form h3 {
   @apply font-medium text-center;
 }
+.authPage-form-message {
+  @apply w-full mb-4 px-1 flex flex-wrap gap-1 leading-4 text-[0.8rem];
+}
+.authPage-form-message span {
+  @apply text-customPurple cursor-pointer hover:underline;
+}
 /* Open with */
 .authPage-open {
   @apply mt-2 w-full flex flex-col;

@@ -52,6 +52,11 @@ const Signup: React.FC = () => {
               "El formato del correo electrónico no es válido. Por favor, ingresa un correo electrónico válido.")}
         </Textfield.Message>
       </Textfield>
+      <p className="authPage-form-message">
+        Al registrarme, acepto las <span>Condiciones del servicio</span> de
+        Taskly y su
+        <span>Política de privacidad</span>.
+      </p>
       <Button
         type="submit"
         loader={signupLoader}
