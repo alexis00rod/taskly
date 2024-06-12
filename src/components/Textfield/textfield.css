@@ -1,6 +1,6 @@
 /* Base */
 .textfield {
-  @apply relative mt-[10px] mb-[25px] flex flex-col;
+  @apply relative my-[22px] flex flex-col;
 }
 /* Label */
 .textfield-label {
@@ -26,7 +26,7 @@
   top: calc(100% + 3px);
 }
 .textfield-message p {
-  @apply text-[0.8rem];
+  @apply leading-4 text-[0.8rem];
 }
 /* Is error */
 .textfield.error .textfield-label {
