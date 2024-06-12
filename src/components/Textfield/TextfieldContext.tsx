@@ -2,11 +2,7 @@ import { createContext, useContext } from "react";
 
 interface TextfieldTypes {
   id: string;
-  name: string;
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  handleFocus: () => void;
-  handleNoFocus: () => void;
+  setFocus: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const TextfieldContext = createContext<TextfieldTypes | null>(null);
 export const useTextfieldContext = () => {
