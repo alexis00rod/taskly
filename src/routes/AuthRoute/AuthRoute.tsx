@@ -1,11 +1,10 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { AuthPage } from "@pages";
 import { Login, LoginConfirm, Signup } from "@pages/AuthPage/components";
 
 const AuthRoute: React.FC = () => {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/auth/login" replace />} />
       <Route path="/" element={<AuthPage />}>
         <Route path="login" element={<Login />} />
         <Route path="login/:email" element={<LoginConfirm />} />
