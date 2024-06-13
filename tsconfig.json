@@ -29,7 +29,9 @@
       "@pages": ["pages/index.ts"],
       "@pages/*": ["pages/*"],
       "@routes": ["routes/index.ts"],
-      "@utils": ["utils/index.ts"]
+      "@utils": ["utils/index.ts"],
+      "@models": ["models/index.ts"],
+      "@hooks": ["hooks/index.ts"],
     }
   },
   "include": ["src"],
