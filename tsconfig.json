@@ -32,6 +32,7 @@
       "@utils": ["utils/index.ts"],
       "@models": ["models/index.ts"],
       "@hooks": ["hooks/index.ts"],
+      "@services": ["services/index.ts"]
     }
   },
   "include": ["src"],
