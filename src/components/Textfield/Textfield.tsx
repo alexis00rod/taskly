@@ -1,6 +1,11 @@
 import { ReactNode, useState } from "react";
 import TextfieldContext from "./TextfieldContext";
-import { TextfieldInput, TextfieldLabel, TextfieldMessage } from "./components";
+import {
+  TextfieldHelper,
+  TextfieldInput,
+  TextfieldLabel,
+  TextfieldValidation,
+} from "./components";
 
 interface TextfieldProps {
   children: ReactNode;
@@ -11,7 +16,8 @@ interface TextfieldProps {
 interface TextfieldComponent extends React.FC<TextfieldProps> {
   Label: typeof TextfieldLabel;
   Input: typeof TextfieldInput;
-  Message: typeof TextfieldMessage;
+  Helper: typeof TextfieldHelper;
+  Validation: typeof TextfieldValidation;
 }
 
 const Textfield: TextfieldComponent = ({ children, id, error }) => {
@@ -30,6 +36,7 @@ const Textfield: TextfieldComponent = ({ children, id, error }) => {
 
 Textfield.Label = TextfieldLabel;
 Textfield.Input = TextfieldInput;
-Textfield.Message = TextfieldMessage;
+Textfield.Helper = TextfieldHelper;
+Textfield.Validation = TextfieldValidation;
 
 export default Textfield;

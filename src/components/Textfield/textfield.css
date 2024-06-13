@@ -20,11 +20,11 @@
 .textfield:focus-within .textfield-input {
   @apply border-none ring-2 ring-customPurple;
 }
-/* Message */
-.textfield-message {
+/* Validation */
+.textfield-validation {
   @apply ml-[15px] mt-[3px];
 }
-.textfield-message p {
+.textfield-validation p {
   @apply leading-4 text-[0.8rem];
 }
 /* Is error */
@@ -37,6 +37,13 @@
 .textfield:focus-within.error .textfield-input {
   @apply ring-red-500;
 }
-.textfield.error .textfield-message p {
+.textfield.error .textfield-validation p {
   @apply text-red-500;
+}
+/* Helper */
+.textfield-helper {
+  @apply w-full mt-2 px-1 flex flex-wrap leading-4 text-[0.8rem];
+}
+.textfield-helper span {
+  @apply w-max mx-1 text-customPurple cursor-pointer hover:underline;
 }
