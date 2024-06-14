@@ -1,0 +1,34 @@
+/* Base */
+.loader {
+  @apply debug w-full flex items-center justify-center;
+}
+/* Spinner */
+.loader-spinner {
+  @apply w-full h-full flex items-center justify-center;
+}
+.loader-spinner div {
+  @apply inline-block h-[75%] w-[75%] animate-spin rounded-full border-solid border-current border-e-transparent align-[-0.125em];
+}
+/* Sizes */
+.loader-small .loader-spinner {
+  @apply w-[40px] h-[40px];
+}
+.loader-small .loader-spinner div {
+  @apply border-[3px];
+}
+.loader-medium .loader-spinner {
+  @apply w-[80px] h-[80px];
+}
+.loader-medium .loader-spinner div {
+  @apply border-[6px];
+}
+.loader-large .loader-spinner {
+  @apply w-[120px] h-[120px];
+}
+.loader-large .loader-spinner div {
+  @apply border-[9px];
+}
+/* Colors */
+.loader-primary .loader-spinner {
+  @apply text-customPurple;
+}
