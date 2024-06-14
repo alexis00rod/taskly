@@ -5,6 +5,7 @@
 @import url("../components/Textfield/textfield.css");
 @import url("../components/Button/button.css");
 @import url("../components/Icon/icon.css");
+@import url("../components/Loader/loader.css");
 /* Pages */
 @import url("../pages/AuthPage/authPage.css");
 
