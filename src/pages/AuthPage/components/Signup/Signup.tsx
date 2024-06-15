@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "redux/slices/auth.slice";
+import { checkEmail, createTemporalUser } from "@services";
 import { validateEmail } from "@utils";
 import { Button, Textfield } from "@components";
 
 const Signup: React.FC = () => {
+  const dispatch = useDispatch();
   const [signup, setSignup] = useState<string>("");
   const [signupError, setSignupError] = useState<string[]>([]);
   const [signupLoader, setSignupLoader] = useState<boolean>(false);
-  const navigate = useNavigate();
 
   const handleSignup = ({
     target: { value },
@@ -15,7 +17,7 @@ const Signup: React.FC = () => {
     setSignup(value);
   };
 
-  const submitSignup = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitSignup = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSignupLoader(true);
     const err: string[] = validateEmail(signup);
@@ -25,38 +27,45 @@ const Signup: React.FC = () => {
       setSignupLoader(false);
       return;
     }
-    setTimeout(() => {
+
+    try {
+      const signInMethods = await checkEmail(signup);
+
+      if (signInMethods.length > 0) {
+        setSignupError(["email-exists"]);
+        setSignupLoader(false);
+        return;
+      }
+
+      const { uid } = await createTemporalUser();
+      dispatch(login({ uid, email: signup }));
       setSignupError([]);
       setSignupLoader(false);
-      navigate(`/`);
-      console.log(signup);
-    }, 3000);
+    } catch (error) {
+      setSignupError([]);
+      setSignupLoader(false);
+    }
   };
 
   return (
     <form onSubmit={submitSignup} className="authPage-form">
       <h3>Regístrate para continuar</h3>
-      <Textfield
-        id="email"
-        error={
-          signupError.includes("email-empty") ||
-          signupError.includes("email-format")
-        }
-      >
+      <Textfield id="email" error={signupError.length > 0}>
         <Textfield.Label>Introduce tu correo electrónico</Textfield.Label>
         <Textfield.Input name="email" value={signup} onChange={handleSignup} />
-        <Textfield.Message>
+        <Textfield.Validation>
           {(signupError.includes("email-empty") &&
             "Por favor, ingresa tu correo electrónico.") ||
             (signupError.includes("email-format") &&
-              "El formato del correo electrónico no es válido. Por favor, ingresa un correo electrónico válido.")}
-        </Textfield.Message>
+              "El formato del correo electrónico no es válido. Por favor, ingresa un correo electrónico válido.") ||
+            (signupError.includes("email-exists") && "email-exists")}
+        </Textfield.Validation>
+        <Textfield.Helper>
+          Al registrarme, acepto las <span>Condiciones del servicio</span> de
+          Taskly y su
+          <span>Política de privacidad</span>.
+        </Textfield.Helper>
       </Textfield>
-      <p className="authPage-form-message">
-        Al registrarme, acepto las <span>Condiciones del servicio</span> de
-        Taskly y su
-        <span>Política de privacidad</span>.
-      </p>
       <Button
         type="submit"
         loader={signupLoader}
