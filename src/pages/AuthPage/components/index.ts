@@ -1,3 +1,3 @@
 export { default as Login } from "./Login/Login";
-export { default as LoginConfirm } from "./LoginConfirm/LoginConfirm";
+export { default as LoginPassword } from "./LoginPassword/LoginPassword";
 export { default as Signup } from "./Signup/Signup";

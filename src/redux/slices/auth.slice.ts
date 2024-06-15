@@ -1,25 +1,38 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { UserTypes } from "models";
 
-const initialState: UserTypes = {
-  email: null,
-  uid: null,
+interface AuthState {
+  loading: boolean;
+  isAuth: boolean;
+  userData: {
+    email: string | null;
+    uid: string | null;
+  };
+}
+
+const initialState: AuthState = {
+  loading: false,
+  isAuth: false,
+  userData: {
+    email: null,
+    uid: null,
+  },
 };
 
-const authSlice = createSlice({
+export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
     login: (state, action) => {
-      state.uid = action.payload.uid;
-      state.email = action.payload.email;
+      state.loading = true;
+      state.isAuth = true;
+      state.userData.email = action.payload.email;
+      state.userData.uid = action.payload.uid;
     },
     logout: (state) => {
-      state.uid = null;
-      state.email = null;
+      state.loading = true;
+      state.isAuth = false;
     },
   },
 });
 
 export const { login, logout } = authSlice.actions;
-export default authSlice.reducer;
