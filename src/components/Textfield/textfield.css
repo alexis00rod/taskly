@@ -1,10 +1,10 @@
 /* Base */
 .textfield {
-  @apply relative my-[22px] flex flex-col;
+  @apply relative w-full my-[22px] flex flex-col;
 }
 /* Label */
 .textfield-label {
-  @apply absolute top-0 left-[10px] h-[44px] px-[5px] flex items-center transition-transform cursor-text select-none;
+  @apply absolute top-0 left-[10px] h-[44px] px-[5px] flex items-center transition-transform cursor-text select-none truncate;
 }
 /* Input */
 .textfield-input {
@@ -26,6 +26,8 @@
 }
 .textfield-validation p {
   @apply leading-4 text-[0.8rem];
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 /* Is error */
 .textfield.error .textfield-label {
