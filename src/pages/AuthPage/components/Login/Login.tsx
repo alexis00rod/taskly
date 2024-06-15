@@ -1,13 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { checkEmail } from "@services";
 import { validateEmail } from "@utils";
 import { Button, Textfield } from "@components";
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
   const [login, setLogin] = useState<string>("");
   const [loginError, setLoginError] = useState<string[]>([]);
   const [loginLoader, setLoginLoader] = useState<boolean>(false);
-  const navigate = useNavigate();
 
   const handleLogin = ({
     target: { value },
@@ -25,13 +26,17 @@ const Login: React.FC = () => {
       setLoginLoader(false);
       return;
     }
+    const emailChecked = await checkEmail(login);
 
-    setTimeout(() => {
+    if (emailChecked.length) {
       setLoginError([]);
       setLoginLoader(false);
       navigate(`/auth/login/${login}`);
-      console.log(login);
-    }, 3000);
+    } else {
+      setLoginError(["email-exists"]);
+      setLoginLoader(false);
+      return;
+    }
   };
 
   return (
@@ -42,17 +47,20 @@ const Login: React.FC = () => {
         id="email"
         error={
           loginError.includes("email-empty") ||
-          loginError.includes("email-format")
+          loginError.includes("email-format") ||
+          loginError.includes("email-exists")
         }
       >
         <Textfield.Label>Introduce tu correo electrónico</Textfield.Label>
         <Textfield.Input name="email" value={login} onChange={handleLogin} />
-        <Textfield.Message>
+        <Textfield.Validation>
           {(loginError.includes("email-empty") &&
             "Por favor, ingresa tu correo electrónico.") ||
             (loginError.includes("email-format") &&
-              "El formato del correo electrónico no es válido. Por favor, ingresa un correo electrónico válido.")}
-        </Textfield.Message>
+              "Formato de correo electrónico no válido.") ||
+            (loginError.includes("email-exists") &&
+              "El correo electrónico no está registrado.")}
+        </Textfield.Validation>
       </Textfield>
       {/* Button submit */}
       <Button
