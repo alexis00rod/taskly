@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useTextfieldContext } from "../../TextfieldContext";
 
 interface TextfieldInputProps {
@@ -5,6 +6,7 @@ interface TextfieldInputProps {
   name: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  autoFocus?: boolean;
 }
 
 const TextfieldInput: React.FC<TextfieldInputProps> = ({
@@ -12,8 +14,10 @@ const TextfieldInput: React.FC<TextfieldInputProps> = ({
   name,
   value,
   onChange,
+  autoFocus = false,
 }) => {
   const { id, setFocus } = useTextfieldContext();
+  const textfieldInputRef = useRef<HTMLInputElement>(null);
 
   const handleFocus = () => {
     setFocus(true);
@@ -25,6 +29,13 @@ const TextfieldInput: React.FC<TextfieldInputProps> = ({
     }
   };
 
+  useEffect(() => {
+    if (autoFocus && textfieldInputRef.current) {
+      textfieldInputRef.current.focus();
+      setFocus(true);
+    }
+  }, [autoFocus, setFocus]);
+
   return (
     <input
       type={type}
@@ -35,6 +46,7 @@ const TextfieldInput: React.FC<TextfieldInputProps> = ({
       className="textfield-input"
       onFocus={handleFocus}
       onBlur={handleNoFocus}
+      ref={textfieldInputRef}
     />
   );
 };
