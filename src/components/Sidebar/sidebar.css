@@ -1,0 +1,29 @@
+/* Base */
+.sidebar {
+  @apply relative w-[255px] h-full p-[8px] flex flex-col flex-none bg-customWhite;
+}
+/* Links */
+.sidebar-link {
+  @apply w-full h-[42px] px-[10px] flex items-center gap-2 rounded-md transition-colors hover:bg-customPurpleExtraLight/30;
+}
+.sidebar-link span {
+  @apply font-medium;
+}
+.sidebar-link.active {
+  @apply bg-customPurple text-customWhite;
+}
+/* Projects */
+.sidebar-projects {
+  @apply w-full flex flex-col;
+}
+.sidebar-projects p {
+  @apply mb-1 mt-3 px-[15px] text-customBlack/50 text-xs font-medium uppercase;
+}
+/* Add project */
+.sidebar-addProject {
+  @apply w-full h-[42px] pl-[10px] flex items-center gap-2;
+}
+/* Resize */
+.sidebar-resize {
+  @apply absolute top-0 right-0 w-[0.1rem] h-full bg-customPurple cursor-ew-resize;
+}

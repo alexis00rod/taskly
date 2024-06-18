@@ -1,0 +1,3 @@
+.dashboard {
+  @apply w-full h-screen flex flex-col;
+}
