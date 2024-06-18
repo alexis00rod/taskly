@@ -38,7 +38,7 @@ const Button: React.FC<ButtonProps> = ({
     `btn btn-${justify ? justify : "center"} ${
       variant ? `btn-${variant}` : "btn-contained"
     } ${color ? `btn-${color}` : "btn-primary"} ${margin ? margin : ""} ${
-      fullWidth ? "w-full" : "w-max"
+      fullWidth ? "w-full" : ""
     }`;
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {

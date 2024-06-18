@@ -1,6 +1,6 @@
 /* Base */
 .btn {
-  @apply relative h-[44px] flex items-center gap-[8px] leading-4 rounded-md duration-200 cursor-pointer overflow-hidden outline-none;
+  @apply relative h-[42px] flex items-center flex-none gap-[8px] leading-4 rounded-md duration-200 cursor-pointer overflow-hidden outline-none;
 }
 /* Justify */
 .btn-center {
@@ -16,6 +16,9 @@
 .btn-text,
 .btn-contained {
   @apply lg:min-w-[180px] px-[15px] font-medium;
+}
+.btn-icon {
+  @apply w-[42px];
 }
 /* Colors */
 /* Primary */
