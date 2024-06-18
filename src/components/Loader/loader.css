@@ -1,6 +1,6 @@
 /* Base */
 .loader {
-  @apply debug w-full flex items-center justify-center;
+  @apply w-full flex items-center justify-center;
 }
 /* Spinner */
 .loader-spinner {
