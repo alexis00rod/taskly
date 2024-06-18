@@ -1,14 +1,14 @@
 /* Base */
 .textfield {
-  @apply relative w-full my-[22px] flex flex-col;
+  @apply relative w-full flex flex-col;
 }
 /* Label */
 .textfield-label {
-  @apply absolute top-0 left-[10px] h-[44px] px-[5px] flex items-center transition-transform cursor-text select-none truncate;
+  @apply absolute top-0 left-[10px] h-[42px] px-[5px] flex items-center transition-transform cursor-text select-none truncate;
 }
 /* Input */
 .textfield-input {
-  @apply h-[44px] flex flex-none px-[15px] transition-colors outline-none bg-customWhite border border-customBlack rounded-md;
+  @apply w-full h-[42px] flex flex-none px-[15px] transition-colors outline-none bg-customWhite border border-customBlack rounded-md;
 }
 /* Is focus */
 .textfield.focus .textfield-label {

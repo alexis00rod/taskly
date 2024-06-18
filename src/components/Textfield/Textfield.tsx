@@ -11,6 +11,7 @@ interface TextfieldProps {
   children: ReactNode;
   id: string;
   error?: boolean;
+  margin?: string;
 }
 
 interface TextfieldComponent extends React.FC<TextfieldProps> {
@@ -20,13 +21,15 @@ interface TextfieldComponent extends React.FC<TextfieldProps> {
   Validation: typeof TextfieldValidation;
 }
 
-const Textfield: TextfieldComponent = ({ children, id, error }) => {
+const Textfield: TextfieldComponent = ({ children, id, error, margin }) => {
   const [focus, setFocus] = useState<boolean>(false);
 
   return (
     <TextfieldContext.Provider value={{ id, setFocus }}>
       <div
-        className={`textfield ${focus ? "focus" : ""} ${error ? "error" : ""}`}
+        className={`textfield ${margin ? margin : "my-[22px]"} ${
+          focus ? "focus" : ""
+        } ${error ? "error" : ""}`}
       >
         {children}
       </div>
