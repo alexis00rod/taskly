@@ -1,6 +1,6 @@
 import { SidebarLink } from "../";
 
-const SidebarProjects = () => {
+const SidebarProjects: React.FC = () => {
   const projects: { href: string; name: string }[] = [
     { href: "/", name: "Proyecto 1" },
     { href: "/", name: "Proyecto 2" },

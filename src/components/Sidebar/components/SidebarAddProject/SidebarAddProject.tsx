@@ -2,7 +2,7 @@ import Icon from "components/Icon/Icon";
 import Textfield from "components/Textfield/Textfield";
 import { useEffect, useRef, useState } from "react";
 
-const SidebarAddProject = () => {
+const SidebarAddProject: React.FC = () => {
   const [addProject, setAddProject] = useState<boolean>(false);
   const [project, setProject] = useState<string>("");
   const projectRef = useRef<HTMLFormElement>(null);
