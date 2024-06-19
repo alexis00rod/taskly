@@ -1,0 +1,43 @@
+/* Base */
+.navbar {
+  @apply w-full h-max flex items-center flex-none bg-customWhite border-b-[0.15rem] border-customPurple select-none;
+}
+/* Logo */
+.navbar-logo {
+  @apply w-[255px] p-[8px] flex items-center flex-none;
+}
+.navbar-logo h1 {
+  @apply px-[10px] text-3xl font-bold text-customPurple;
+}
+/* Main */
+.navbar-main {
+  @apply w-full px-[10px] py-[8px] flex items-center gap-[8px];
+}
+/* Greeting */
+.navbar-greeting {
+  @apply h-full flex items-center grow text-lg font-medium;
+}
+/* Notifications */
+
+/* User */
+.navbar-user-box {
+  @apply w-full py-[8px] flex flex-col;
+}
+.navbar-user-box span {
+  @apply px-[10px] my-[8px] text-customGray text-[0.8rem] uppercase font-semibold;
+}
+.navbar-user-account {
+  @apply w-full p-[8px] flex items-center gap-2;
+}
+.navbar-user-account-info {
+  @apply w-full max-w-[180px] flex flex-col;
+}
+.navbar-user-account h3 {
+  @apply w-full text-[0.9rem] truncate;
+}
+.navbar-user-account h4 {
+  @apply w-full text-[0.8rem] truncate;
+}
+.navbar-user-account img {
+  @apply w-[42px] h-[42px] flex flex-none rounded-md object-cover;
+}
