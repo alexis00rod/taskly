@@ -30,8 +30,13 @@
 }
 /* Secondary */
 .btn-contained.btn-secondary {
-  @apply bg-customPink text-customWhite hover:bg-customPinkDark disabled:bg-customPinkLight disabled:hover:disabled:bg-customPinkLight;
+  @apply bg-customGray text-customWhite hover:bg-customGrayDark disabled:bg-customGrayLight disabled:hover:disabled:bg-customGrayLight;
 }
+.btn-icon.btn-secondary {
+  @apply bg-customGrayExtraLight hover:bg-customGrayLight text-customDarkTheme;
+}
+/* Error */
+
 
 /* Ripple effect */
 .ripple-container {
