@@ -1,3 +1,9 @@
 .dashboard {
   @apply w-full h-screen flex flex-col;
 }
+.dashboard-wrapper {
+  @apply w-full flex grow;
+}
+.dashboard-page {
+  @apply w-full p-[16px] flex flex-col;
+}

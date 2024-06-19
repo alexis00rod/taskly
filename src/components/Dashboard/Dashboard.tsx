@@ -5,11 +5,11 @@ const Dashboard: React.FC = () => {
   return (
     <div className="dashboard">
       <Navbar />
-      <div className="w-full flex grow">
+      <div className="dashboard-wrapper">
         <Sidebar />
-        <div>
+        <main className="dashboard-page">
           <Outlet />
-        </div>
+        </main>
       </div>
     </div>
   );
