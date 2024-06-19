@@ -1,14 +1,14 @@
+import { RootState } from "redux/store";
+import { useSelector } from "react-redux";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { Button, Icon } from "@components";
 import AuthImage from "@assets/images/auth-image.png";
-import { useSelector } from "react-redux";
-import { RootState } from "redux/store";
 
 const AuthPage = () => {
   const { pathname } = useLocation();
-  const user = useSelector((state: RootState) => state.user);
+  const auth = useSelector((state: RootState) => state.auth);
 
-  if (user.isAuth) return <Navigate to="/" />;
+  if (auth.isAuth) return <Navigate to="/" />;
 
   return (
     <div className="authPage">

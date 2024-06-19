@@ -1,12 +1,9 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { login } from "redux/slices/auth.slice";
 import { checkEmail, createTemporalUser } from "@services";
 import { validateEmail } from "@utils";
 import { Button, Textfield } from "@components";
 
 const Signup: React.FC = () => {
-  const dispatch = useDispatch();
   const [signup, setSignup] = useState<string>("");
   const [signupError, setSignupError] = useState<string[]>([]);
   const [signupLoader, setSignupLoader] = useState<boolean>(false);
@@ -37,8 +34,7 @@ const Signup: React.FC = () => {
         return;
       }
 
-      const { uid } = await createTemporalUser();
-      dispatch(login({ uid, email: signup }));
+      await createTemporalUser();
       setSignupError([]);
       setSignupLoader(false);
     } catch (error) {
