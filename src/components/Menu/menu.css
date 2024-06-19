@@ -1,0 +1,18 @@
+/* Base */
+.menu {
+  @apply relative;
+}
+/* Container */
+.menu-container {
+  @apply absolute top-full right-0 w-[280px];
+}
+.menu-container-expand {
+  @apply w-full mt-[5px] flex flex-col bg-customWhite border-[0.1rem] border-customDarkTheme rounded-md overflow-hidden zoomOut select-none;
+}
+.menu-container-expand.open {
+  @apply zoomIn;
+}
+/* Item */
+.menu-item {
+  @apply w-full h-[42px] px-[10px] flex items-center flex-none hover:bg-customPurpleExtraLight/30;
+}
