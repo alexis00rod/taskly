@@ -26,6 +26,11 @@ export default {
         customPinkLight: "#ffc2c2",
         customPink: "#ffb3b3",
         customPinkDark: "#cc8f8f",
+        // Gray
+        customGrayExtraLight: "#d9d9da",
+        customGrayLight: "#b2b4b5",
+        customGray: "#9fa1a3",
+        customGrayDark: "#7f8182",
         // Theme
         customLightTheme: "#fcfcf5",
         customDarkTheme: "#494942",
