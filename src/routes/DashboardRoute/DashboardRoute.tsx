@@ -1,17 +1,20 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "redux/store";
+import { HomePage } from "@pages";
 import { Dashboard, Loader } from "@components";
 
 const DashboardRoute = () => {
-  const user = useSelector((state: RootState) => state.user);
+  const auth = useSelector((state: RootState) => state.auth);
 
-  if (!user.loading) return <Loader size="large" fullScreen />;
-  if (!user.isAuth) return <Navigate to={"/auth/login"} />;
+  if (!auth.loading) return <Loader size="large" fullScreen />;
+  if (!auth.isAuth) return <Navigate to={"/auth/login"} />;
 
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />}></Route>
+      <Route path="/" element={<Dashboard />}>
+        <Route index path="/" element={<HomePage />} />
+      </Route>
     </Routes>
   );
 };
