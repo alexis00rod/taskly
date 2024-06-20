@@ -1,0 +1,27 @@
+.firstProjectPage {
+  @apply w-full h-screen bg-transparent;
+}
+/* Container */
+.firstProjectPage-container {
+  @apply w-full md:w-[480px] pt-[15vh] h-full md:h-max md:mt-[12vh] md:pt-10 p-10 mx-auto flex flex-col items-center flex-none gap-4 bg-customWhite md:rounded-md md:shadow-sm md:shadow-customDarkTheme/30;
+}
+/* Title */
+.firstProjectPage-container h2 {
+  @apply w-full max-w-[480px] mb-2 font-semibold text-3xl text-center;
+}
+/* Form */
+.firstProjectPage-form {
+  @apply w-full flex flex-col;
+}
+.firstProjectPage-form-header {
+  @apply w-full flex flex-col text-center;
+}
+.firstProjectPage-form-header h3 {
+  @apply mb-2 text-xl font-medium;
+}
+.firstProjectPage-form-header p {
+  @apply mb-4 text-[0.8rem];
+}
+.firstProjectPage-form-btns {
+  @apply w-full mt-2 flex justify-end;
+}
