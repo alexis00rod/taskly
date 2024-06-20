@@ -12,7 +12,7 @@
 }
 /* Is focus */
 .textfield.focus .textfield-label {
-  @apply h-[20px] -translate-y-[9px] bg-customWhite text-[0.9rem] cursor-default;
+  @apply h-[20px] -translate-y-[11px] bg-customWhite text-[0.9rem] cursor-default;
 }
 .textfield:focus-within .textfield-label {
   @apply text-customPurple;
