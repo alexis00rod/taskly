@@ -1,20 +1,22 @@
+import { useProjects } from "@hooks";
 import { SidebarLink } from "../";
 
 const SidebarProjects: React.FC = () => {
-  const projects: { href: string; name: string }[] = [
-    { href: "/", name: "Proyecto 1" },
-    { href: "/", name: "Proyecto 2" },
-    { href: "/", name: "Proyecto 3" },
-  ];
+  const { projects, projectsLoader } = useProjects();
 
   return (
     <div className="sidebar-projects">
       <p>Proyectos</p>
-      {projects.map((project, i) => (
-        <SidebarLink key={i} to={project.href} icon="folder">
-          {project.name}
-        </SidebarLink>
-      ))}
+      {projectsLoader &&
+        projects.map((project) => (
+          <SidebarLink
+            key={project.id}
+            to={`/dashboard/project/${project.id}`}
+            icon="folder"
+          >
+            {project.name}
+          </SidebarLink>
+        ))}
     </div>
   );
 };
