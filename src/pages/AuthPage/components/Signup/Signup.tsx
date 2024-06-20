@@ -1,9 +1,11 @@
 import { useState } from "react";
-import { checkEmail, createTemporalUser } from "@services";
+import { checkEmail, createTemporalUser, createUserDoc } from "@services";
 import { validateEmail } from "@utils";
 import { Button, Textfield } from "@components";
+import { useNavigate } from "react-router-dom";
 
 const Signup: React.FC = () => {
+  const navigate = useNavigate();
   const [signup, setSignup] = useState<string>("");
   const [signupError, setSignupError] = useState<string[]>([]);
   const [signupLoader, setSignupLoader] = useState<boolean>(false);
@@ -33,8 +35,9 @@ const Signup: React.FC = () => {
         setSignupLoader(false);
         return;
       }
-
-      await createTemporalUser();
+      navigate("/first-project");
+      const { uid } = await createTemporalUser();
+      await createUserDoc(uid, signup);
       setSignupError([]);
       setSignupLoader(false);
     } catch (error) {
