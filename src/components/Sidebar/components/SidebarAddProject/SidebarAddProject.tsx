@@ -1,8 +1,13 @@
-import Icon from "components/Icon/Icon";
-import Textfield from "components/Textfield/Textfield";
 import { useEffect, useRef, useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "redux/store";
+import { createProjectDoc } from "@services";
+import { Icon, Textfield } from "@components";
 
 const SidebarAddProject: React.FC = () => {
+  const {
+    userData: { uid },
+  } = useSelector((state: RootState) => state.auth);
   const [addProject, setAddProject] = useState<boolean>(false);
   const [project, setProject] = useState<string>("");
   const projectRef = useRef<HTMLFormElement>(null);
@@ -34,9 +39,17 @@ const SidebarAddProject: React.FC = () => {
     setProject(value);
   };
 
-  const submitProject = (e: React.FormEvent<HTMLFormElement>) => {
+  const submitProject = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(project);
+    if (!project) {
+      setAddProject(false);
+      return;
+    }
+    if (uid) {
+      setAddProject(false);
+      await createProjectDoc(project, uid);
+      setProject("");
+    }
   };
 
   return addProject ? (
