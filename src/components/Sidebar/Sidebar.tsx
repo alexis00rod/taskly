@@ -4,7 +4,7 @@ const Sidebar: React.FC = () => {
   return (
     <div className="sidebar">
       {/* Home link */}
-      <SidebarLink to="/dashboard" icon="home">
+      <SidebarLink to="/dashboard/home" icon="home">
         Inicio
       </SidebarLink>
       {/* Calendar link */}
