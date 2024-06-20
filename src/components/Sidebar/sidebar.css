@@ -25,5 +25,5 @@
 }
 /* Resize */
 .sidebar-resize {
-  @apply absolute top-0 right-0 w-[0.1rem] h-full bg-customPurple cursor-ew-resize;
+  @apply absolute top-0 right-0 w-[0.1rem] h-full bg-customPurple cursor-ew-resize hover:w-[0.2rem];
 }
