@@ -16,6 +16,7 @@
 @import url("../pages/AuthPage/authPage.css");
 @import url("../pages/FirstProjectPage/firstProjectPage.css");
 @import url("../pages/HomePage/homePage.css");
+@import url("../pages/ProjectPage/projectPage.css");
 
 @tailwind base;
 @tailwind components;
