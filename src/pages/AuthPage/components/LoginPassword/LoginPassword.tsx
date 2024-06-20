@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { loginUser } from "@services";
-import { handleFirebaseErrors, validatePassword } from "@utils";
+import {
+  handleDocumentTitle,
+  handleFirebaseErrors,
+  validatePassword,
+} from "@utils";
 import { Button, Icon, Textfield } from "@components";
 
 const LoginPassword = () => {
+  handleDocumentTitle("Iniciar sesión");
   const { email } = useParams();
   const [password, setPassword] = useState<string>("");
   const [passwordError, setPasswordError] = useState<string[]>([]);

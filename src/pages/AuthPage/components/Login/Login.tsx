@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { checkEmail } from "@services";
-import { validateEmail } from "@utils";
+import { handleDocumentTitle, validateEmail } from "@utils";
 import { Button, Textfield } from "@components";
 
 const Login: React.FC = () => {
+  handleDocumentTitle("Iniciar sesión");
   const navigate = useNavigate();
   const [login, setLogin] = useState<string>("");
   const [loginError, setLoginError] = useState<string[]>([]);

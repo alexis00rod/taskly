@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { checkEmail, createTemporalUser, createUserDoc } from "@services";
-import { validateEmail } from "@utils";
+import { handleDocumentTitle, validateEmail } from "@utils";
 import { Button, Textfield } from "@components";
 import { useNavigate } from "react-router-dom";
 
 const Signup: React.FC = () => {
+  handleDocumentTitle("Crea una cuenta y prueba Taskly");
   const navigate = useNavigate();
   const [signup, setSignup] = useState<string>("");
   const [signupError, setSignupError] = useState<string[]>([]);
