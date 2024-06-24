@@ -11,7 +11,7 @@
 }
 /* Sizes */
 .loader-small .loader-spinner {
-  @apply w-[40px] h-[40px];
+  @apply w-[32px] h-[32px];
 }
 .loader-small .loader-spinner div {
   @apply border-[3px];
@@ -31,4 +31,7 @@
 /* Colors */
 .loader-primary .loader-spinner {
   @apply text-customPurple;
+}
+.loader-white .loader-spinner {
+  @apply text-customWhite;
 }
