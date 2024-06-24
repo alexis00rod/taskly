@@ -28,6 +28,9 @@
 .btn-contained.btn-primary {
   @apply bg-customPurple text-customWhite hover:bg-customPurpleDark disabled:bg-customPurpleLight disabled:hover:disabled:bg-customPurpleLight;
 }
+.btn-icon.btn-primary {
+  @apply bg-customPurple text-customWhite hover:bg-customPurpleDark disabled:bg-customPurpleLight disabled:hover:disabled:bg-customPurpleLight;
+}
 /* Secondary */
 .btn-contained.btn-secondary {
   @apply bg-customGray text-customWhite hover:bg-customGrayDark disabled:bg-customGrayLight disabled:hover:disabled:bg-customGrayLight;
