@@ -1,6 +1,6 @@
 /* Base */
 .btn {
-  @apply relative h-[42px] flex items-center flex-none gap-[8px] leading-4 rounded-md duration-200 cursor-pointer overflow-hidden outline-none;
+  @apply relative h-[36px] flex items-center flex-none gap-[8px] leading-4 rounded-md duration-200 cursor-pointer overflow-hidden outline-none;
 }
 /* Justify */
 .btn-center {
@@ -18,7 +18,7 @@
   @apply lg:min-w-[180px] px-[15px] font-medium;
 }
 .btn-icon {
-  @apply w-[42px];
+  @apply w-[36px];
 }
 /* Colors */
 /* Primary */
@@ -36,7 +36,6 @@
   @apply bg-customGrayExtraLight hover:bg-customGrayLight text-customDarkTheme;
 }
 /* Error */
-
 
 /* Ripple effect */
 .ripple-container {
