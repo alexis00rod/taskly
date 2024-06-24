@@ -1,9 +1,9 @@
 .dashboard {
-  @apply w-full h-screen flex flex-col;
+  @apply w-full h-full flex flex-col;
 }
 .dashboard-wrapper {
-  @apply w-full flex grow;
+  @apply w-full h-full flex grow;
 }
 .dashboard-page {
-  @apply w-full max-w-[1200px] mx-auto px-[32px] py-[16px] flex flex-col;
+  @apply w-full flex flex-col;
 }
