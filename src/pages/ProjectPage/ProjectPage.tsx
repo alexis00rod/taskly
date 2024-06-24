@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import { handleDocumentTitle } from "@utils";
 import { useEffect, useState } from "react";
-import { getProjectDocPerId } from "@services";
 import { ProjectTypes } from "@models";
+import { getProjectDocPerId } from "@services";
+import { handleDocumentTitle } from "@utils";
 import { Loader } from "@components";
-import { ProjectName } from "./components";
+import { ProjectAddFavorite, ProjectName } from "./components";
 
 const ProjectPage: React.FC = () => {
   const { idProject } = useParams();
@@ -30,6 +30,7 @@ const ProjectPage: React.FC = () => {
     <div className="projectPage">
       <div className="projectPage-header">
         <ProjectName id={project.id} name={project.name} />
+        <ProjectAddFavorite project={project.id} />
       </div>
       <div className="projectPage-main"></div>
     </div>
