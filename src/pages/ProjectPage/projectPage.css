@@ -1,3 +1,9 @@
 .projectPage {
-  @apply debug;
+  @apply w-full flex flex-col;
+}
+.projectPage-header {
+  @apply w-full px-[24px] py-[12px] bg-customWhite border-b border-customDarkTheme;
+}
+.projectPage-header .projectName {
+  @apply w-full max-w-[240px];
 }
