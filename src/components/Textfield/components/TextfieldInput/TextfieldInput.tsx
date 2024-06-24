@@ -7,6 +7,7 @@ interface TextfieldInputProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   autoFocus?: boolean;
+  outlined?: boolean;
 }
 
 const TextfieldInput: React.FC<TextfieldInputProps> = ({
@@ -15,6 +16,7 @@ const TextfieldInput: React.FC<TextfieldInputProps> = ({
   value,
   onChange,
   autoFocus = false,
+  outlined = true,
 }) => {
   const { id, setFocus } = useTextfieldContext();
   const textfieldInputRef = useRef<HTMLInputElement>(null);
@@ -43,7 +45,11 @@ const TextfieldInput: React.FC<TextfieldInputProps> = ({
       name={name}
       value={value}
       onChange={onChange}
-      className="textfield-input"
+      className={`textfield-input ${
+        outlined
+          ? "border-customDarkTheme"
+          : "border-transparent hover:border-customDarkTheme"
+      }`}
       onFocus={handleFocus}
       onBlur={handleNoFocus}
       ref={textfieldInputRef}
