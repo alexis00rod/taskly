@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "redux/store";
-import { HomePage, ProjectPage } from "@pages";
+import { HomePage, NewProjectPage, ProjectPage } from "@pages";
 import { Dashboard, Loader } from "@components";
 
 const DashboardRoute = () => {
@@ -16,6 +16,7 @@ const DashboardRoute = () => {
         <Route path="/" element={<Navigate to="/dashboard/home" replace />} />
         <Route index path="/home" element={<HomePage />} />
         <Route path="/project/:idProject" element={<ProjectPage />} />
+        <Route path="/new-project" element={<NewProjectPage />} />
       </Route>
     </Routes>
   );
