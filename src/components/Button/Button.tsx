@@ -1,6 +1,7 @@
 import { ReactNode, useRef, useState, MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import createEffect from "./buttonEffect";
+import { Loader } from "@components";
 
 interface ButtonProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ interface ButtonProps {
   loader?: boolean;
   disabled?: boolean;
   justify?: string;
+  title?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -28,6 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   loader,
   disabled,
   justify,
+  title,
 }) => {
   const [ripples, setRipples] = useState<
     { x: number; y: number; size: number }[]
@@ -51,7 +54,7 @@ const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <Link to={href} className={buttonStyle()}>
+      <Link to={href} title={title} className={buttonStyle()}>
         {children}
       </Link>
     );
@@ -61,12 +64,13 @@ const Button: React.FC<ButtonProps> = ({
     <button
       type={type ? type : "button"}
       ref={buttonRef}
+      title={title}
       onClick={handleClick}
       className={buttonStyle()}
       disabled={disabled}
     >
       {loader ? (
-        <>Cargando...</>
+        <Loader color="white" />
       ) : (
         <>
           {variant !== "link" && (
