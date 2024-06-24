@@ -3,6 +3,7 @@ import * as db from "firebase/firestore";
 import { ProjectTypes } from "@models";
 // References
 const projectsRef = () => db.collection(dbFirebase, "projects");
+const projectRef = (project: string) => db.doc(dbFirebase, "projects", project);
 
 // Function to create project doc
 export const createProjectDoc = async (name: string, uid: string) => {
@@ -10,7 +11,7 @@ export const createProjectDoc = async (name: string, uid: string) => {
     name,
     ownerId: uid,
     createdAt: db.serverTimestamp(),
-    updateAt: db.serverTimestamp(),
+    updatedAt: db.serverTimestamp(),
   });
   return projectId.id;
 };
@@ -31,4 +32,24 @@ export const getProjectsDoc = (
   });
 
   return unsubscribe;
+};
+
+// Function to get project per id
+export const getProjectDocPerId = (
+  projectId: string,
+  callback: (project: ProjectTypes) => void
+) => {
+  const unsubscribe = db.onSnapshot(projectRef(projectId), (snapshot) => {
+    const project = { id: snapshot.id, ...snapshot.data() } as ProjectTypes;
+    callback(project);
+  });
+  return unsubscribe;
+};
+
+// Function to update project name document
+export const updateProjectNameDoc = async (
+  project: string,
+  newName: string
+) => {
+  return await db.updateDoc(projectRef(project), { name: newName });
 };
