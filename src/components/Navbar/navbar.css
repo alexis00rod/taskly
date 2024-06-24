@@ -1,6 +1,6 @@
 /* Base */
 .navbar {
-  @apply w-full h-max flex items-center flex-none bg-customWhite border-b-[0.15rem] border-customPurple select-none;
+  @apply w-full h-[60px] flex items-center flex-none bg-customWhite border-b border-customDarkTheme select-none;
 }
 /* Logo */
 .navbar-logo {
