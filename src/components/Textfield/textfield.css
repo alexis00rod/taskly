@@ -4,15 +4,15 @@
 }
 /* Label */
 .textfield-label {
-  @apply absolute top-0 left-[10px] h-[42px] px-[5px] flex items-center transition-transform cursor-text select-none truncate;
+  @apply absolute top-0 left-[10px] h-[36px] px-[5px] flex items-center transition-transform cursor-text select-none truncate;
 }
 /* Input */
 .textfield-input {
-  @apply w-full h-[42px] flex flex-none px-[15px] transition-colors outline-none bg-customWhite border border-customBlack rounded-md;
+  @apply w-full h-[36px] flex flex-none px-[6px] transition-colors outline-none border bg-customWhite rounded-md;
 }
 /* Is focus */
 .textfield.focus .textfield-label {
-  @apply h-[20px] -translate-y-[11px] bg-customWhite text-[0.9rem] cursor-default;
+  @apply h-[20px] -translate-y-[11px] bg-customWhite text-[12px] cursor-default;
 }
 .textfield:focus-within .textfield-label {
   @apply text-customPurple;
@@ -25,7 +25,7 @@
   @apply ml-[15px] mt-[3px];
 }
 .textfield-validation p {
-  @apply leading-4 text-[0.8rem];
+  @apply leading-4 text-[12px];
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
@@ -44,7 +44,7 @@
 }
 /* Helper */
 .textfield-helper {
-  @apply w-full mt-2 px-1 flex flex-wrap leading-4 text-[0.8rem];
+  @apply w-full mt-2 px-1 flex flex-wrap leading-4 text-[12px];
 }
 .textfield-helper span {
   @apply w-max mx-1 text-customPurple cursor-pointer hover:underline;
