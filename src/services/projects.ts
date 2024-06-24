@@ -51,5 +51,13 @@ export const updateProjectNameDoc = async (
   project: string,
   newName: string
 ) => {
-  return await db.updateDoc(projectRef(project), { name: newName });
+  return await db.updateDoc(projectRef(project), {
+    name: newName,
+    updatedAt: db.serverTimestamp(),
+  });
+};
+
+// Function to delete document from project
+export const deleteDocProject = async (project: string) => {
+  return await db.deleteDoc(projectRef(project));
 };
