@@ -4,9 +4,14 @@ import { useMenuContext } from "../../MenuContext";
 interface MenuItemProps {
   children: ReactNode;
   onClick?: () => void;
+  className?: string;
 }
 
-const MenuItem: React.FC<MenuItemProps> = ({ children, onClick }) => {
+const MenuItem: React.FC<MenuItemProps> = ({
+  children,
+  onClick,
+  className,
+}) => {
   const { closeMenu } = useMenuContext();
 
   const handleCloseMenu = () => {
@@ -15,7 +20,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ children, onClick }) => {
   };
 
   return (
-    <button type="button" onClick={handleCloseMenu} className="menu-item">
+    <button
+      type="button"
+      onClick={handleCloseMenu}
+      className={`menu-item ${className ? className : ""}`}
+    >
       {children}
     </button>
   );
