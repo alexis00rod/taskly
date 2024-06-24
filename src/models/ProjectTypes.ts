@@ -6,5 +6,5 @@ export interface ProjectTypes {
   ownerId: string;
   description?: string;
   createdAt: Timestamp;
-  updateAt: Timestamp;
+  updatedAt: Timestamp;
 }

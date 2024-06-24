@@ -5,6 +5,7 @@ import * as db from "firebase/firestore";
 const tasksRef = (project: string) =>
   db.collection(dbFirebase, "projects", project, "tasks");
 
+// Function to create document task
 export const createTaskDoc = async (
   name: string,
   project: string,
