@@ -4,7 +4,7 @@ import { ProjectTypes } from "@models";
 import { getProjectDocPerId } from "@services";
 import { handleDocumentTitle } from "@utils";
 import { Loader } from "@components";
-import { ProjectAddFavorite, ProjectName } from "./components";
+import { ProjectAddFavorite, ProjectControls, ProjectName } from "./components";
 
 const ProjectPage: React.FC = () => {
   const { idProject } = useParams();
@@ -30,6 +30,7 @@ const ProjectPage: React.FC = () => {
     <div className="projectPage">
       <div className="projectPage-header">
         <ProjectName id={project.id} name={project.name} />
+        <ProjectControls project={project.id}/>
         <ProjectAddFavorite project={project.id} />
       </div>
       <div className="projectPage-main"></div>
