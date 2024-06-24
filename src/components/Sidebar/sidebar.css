@@ -1,13 +1,30 @@
 /* Base */
 .sidebar {
-  @apply relative w-[255px] h-full p-[8px] flex flex-col flex-none bg-customWhite;
+  @apply relative w-[240px] flex flex-col flex-none bg-customWhite divide-y divide-customDarkTheme;
+  height: calc(100vh - 60px);
 }
-/* Links */
+/* Section */
+.sidebar-section {
+  @apply w-full h-max px-[10px] py-[8px] flex flex-col;
+}
+.sidebar-section p {
+  @apply top-0 left-0 ml-[6px] mt-[3px] mb-[6px] text-[0.8rem] text-customGray uppercase font-semibold;
+}
+.sidebar-section.scrollable {
+  @apply overflow-y-auto;
+}
+.sidebar-section.scrollable::-webkit-scrollbar {
+  @apply w-[3px];
+}
+.sidebar-section.scrollable::-webkit-scrollbar-thumb {
+  @apply bg-customPurple rounded-md;
+}
+/* Link */
 .sidebar-link {
-  @apply w-full h-[42px] px-[10px] flex items-center gap-2 rounded-md transition-colors hover:bg-customPurpleExtraLight/30;
+  @apply w-full h-[36px] px-[10px] mb-[5px] flex items-center flex-none gap-2 rounded-md transition-colors select-none hover:bg-customPurpleExtraLight/30;
 }
 .sidebar-link span {
-  @apply font-medium;
+  @apply font-medium truncate;
 }
 .sidebar-link.active {
   @apply bg-customPurple text-customWhite;
@@ -16,14 +33,11 @@
 .sidebar-projects {
   @apply w-full flex flex-col;
 }
-.sidebar-projects p {
-  @apply mb-1 mt-3 px-[15px] text-[0.8rem] text-customGray uppercase font-semibold;
-}
 /* Add project */
 .sidebar-addProject {
-  @apply w-full h-[42px] pl-[10px] flex items-center gap-2;
+  @apply w-full h-[36px] pl-[10px] flex items-center gap-2;
 }
 /* Resize */
 .sidebar-resize {
-  @apply absolute top-0 right-0 w-[0.1rem] h-full bg-customPurple cursor-ew-resize hover:w-[0.2rem];
+  @apply absolute top-0 right-0 w-[1px] h-full bg-customDarkTheme cursor-ew-resize hover:w-[4px] hover:bg-customPurple;
 }

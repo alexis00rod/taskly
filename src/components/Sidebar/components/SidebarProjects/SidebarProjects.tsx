@@ -6,7 +6,6 @@ const SidebarProjects: React.FC = () => {
 
   return (
     <div className="sidebar-projects">
-      <p>Proyectos</p>
       {projectsLoader &&
         projects.map((project) => (
           <SidebarLink
