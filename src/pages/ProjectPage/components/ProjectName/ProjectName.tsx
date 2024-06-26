@@ -1,13 +1,12 @@
+import { useEffect, useState } from "react";
 import { updateProjectNameDoc } from "@services";
 import { Textfield } from "@components";
-import { useEffect, useState } from "react";
+import { useProjectPageContext } from "@pages/ProjectPage/ProjectPageContext";
 
-interface ProjectNameProps {
-  id: string;
-  name: string;
-}
-
-const ProjectName: React.FC<ProjectNameProps> = ({ id, name }) => {
+const ProjectName: React.FC = () => {
+  const {
+    project: { id, name },
+  } = useProjectPageContext();
   const [updateName, setUpdateName] = useState<string>(name);
 
   useEffect(() => {

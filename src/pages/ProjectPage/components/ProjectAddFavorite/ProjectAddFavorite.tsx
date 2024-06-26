@@ -1,40 +1,39 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "redux/store";
 import {
   addProjectToFavorites,
   isProjectInFavorites,
   removeProjectToFavorites,
 } from "@services";
+import { useUserData } from "@hooks";
 import { Button, Icon } from "@components";
+import { useProjectPageContext } from "@pages/ProjectPage/ProjectPageContext";
 
-interface ProjectAddFavoriteProps {
-  project: string;
-}
-
-const ProjectAddFavorite: React.FC<ProjectAddFavoriteProps> = ({ project }) => {
+const ProjectAddFavorite: React.FC = () => {
+  const {
+    project: { id },
+  } = useProjectPageContext();
   const {
     userData: { uid },
-  } = useSelector((state: RootState) => state.auth);
+  } = useUserData();
   const [projectInFavorites, setProjectInFavorites] = useState<boolean | null>(
     null
   );
 
   useEffect(() => {
     if (!uid) return;
-    const unsubscribe = isProjectInFavorites(uid, project, (snapshot) => {
+    const unsubscribe = isProjectInFavorites(uid, id, (snapshot) => {
       setProjectInFavorites(snapshot);
     });
     return () => {
       unsubscribe();
     };
-  }, [project, uid]);
+  }, [id, uid]);
 
   const handleProjectInFavorites = () => {
     if (!uid) return;
     projectInFavorites
-      ? removeProjectToFavorites(uid, project)
-      : addProjectToFavorites(uid, project);
+      ? removeProjectToFavorites(uid, id)
+      : addProjectToFavorites(uid, id);
   };
 
   if (projectInFavorites !== null) {

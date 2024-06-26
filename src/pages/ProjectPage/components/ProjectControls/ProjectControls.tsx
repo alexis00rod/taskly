@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { deleteDocProject } from "@services";
 import { Button, Icon, Menu } from "@components";
+import { useProjectPageContext } from "@pages/ProjectPage/ProjectPageContext";
 
-interface ProjectControlsProps {
-  project: string;
-}
-
-const ProjectControls: React.FC<ProjectControlsProps> = ({ project }) => {
+const ProjectControls: React.FC = () => {
+  const {
+    project: { id },
+  } = useProjectPageContext();
   const navigate = useNavigate();
 
   // Function to copy project link
@@ -19,13 +19,13 @@ const ProjectControls: React.FC<ProjectControlsProps> = ({ project }) => {
 
   // Function to navigate to edit project
   const navigateToEditProject = () => {
-    navigate(`/dashboard/project/${project}/edit`);
+    navigate(`/project/${id}/edit`);
   };
 
   // Function to remove project
   const removeProject = async () => {
-    await deleteDocProject(project);
-    navigate("/dashboard/home");
+    await deleteDocProject(id);
+    navigate("/");
   };
 
   return (
