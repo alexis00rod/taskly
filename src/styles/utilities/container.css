@@ -1,0 +1,6 @@
+.container {
+  @apply w-full mx-auto px-[32px] py-[16px];
+}
+.container.container-medium {
+  @apply max-w-[1200px];
+}
