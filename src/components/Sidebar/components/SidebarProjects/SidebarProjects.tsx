@@ -10,7 +10,7 @@ const SidebarProjects: React.FC = () => {
         projects.map((project) => (
           <SidebarLink
             key={project.id}
-            to={`/dashboard/project/${project.id}`}
+            to={`/project/${project.id}`}
             icon="folder"
           >
             {project.name}

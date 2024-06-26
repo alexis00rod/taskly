@@ -35,7 +35,7 @@ const NewProjectPage: React.FC = () => {
     try {
       if (uid) {
         const project = await createProjectDoc(name, uid);
-        navigate(`/dashboard/project/${project}`);
+        navigate(`/project/${project}`);
         setNameError([]);
         setNameLoader(false);
       }

@@ -4,10 +4,10 @@ const Sidebar: React.FC = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-section">
-        <SidebarLink to="/dashboard/home" icon="home">
+        <SidebarLink to="/" icon="home">
           Inicio
         </SidebarLink>
-        <SidebarLink to="/dashboard/calendar" icon="calendar">
+        <SidebarLink to="/calendar" icon="calendar">
           Calendario
         </SidebarLink>
       </div>

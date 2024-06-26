@@ -4,7 +4,7 @@ import { WidgetProjects } from "./components";
 const HomePage: React.FC = () => {
   handleDocumentTitle("Inicio");
   return (
-    <div>
+    <div className="container container-medium">
       <WidgetProjects />
     </div>
   );

@@ -14,7 +14,7 @@ const WidgetProjects: React.FC = () => {
         <Loader size="medium" />
       ) : (
         <div className="widget-content widget-projects">
-          <Link to="/dashboard/new-project" className="widget-projects-item">
+          <Link to="/new-project" className="widget-projects-item">
             <span className="widget-projects-newProject">
               <Icon name="plus" />
             </span>{" "}
@@ -22,7 +22,7 @@ const WidgetProjects: React.FC = () => {
           </Link>
           {projects.map((project) => (
             <Link
-              to={`/dashboard/project/${project.id}`}
+              to={`/project/${project.id}`}
               key={project.id}
               className="widget-projects-item"
             >
