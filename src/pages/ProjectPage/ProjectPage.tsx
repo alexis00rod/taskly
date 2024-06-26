@@ -1,10 +1,16 @@
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Outlet, useParams } from "react-router-dom";
 import { ProjectTypes } from "@models";
 import { getProjectDocPerId } from "@services";
 import { handleDocumentTitle } from "@utils";
 import { Loader } from "@components";
-import { ProjectAddFavorite, ProjectControls, ProjectName } from "./components";
+import {
+  ProjectAddFavorite,
+  ProjectControls,
+  ProjectName,
+  ProjectNav,
+} from "./components";
+import ProjectPageContext from "./ProjectPageContext";
 
 const ProjectPage: React.FC = () => {
   const { idProject } = useParams();
@@ -24,17 +30,22 @@ const ProjectPage: React.FC = () => {
     };
   }, [idProject]);
 
-  if (!projectLoader || !project) return <Loader size="medium" />;
+  if (!project || !projectLoader) return <Loader size="medium" />;
 
   return (
-    <div className="projectPage">
-      <div className="projectPage-header">
-        <ProjectName id={project.id} name={project.name} />
-        <ProjectControls project={project.id}/>
-        <ProjectAddFavorite project={project.id} />
+    <ProjectPageContext.Provider value={{ project }}>
+      <div className="projectPage">
+        <div className="projectPage-header">
+          <ProjectName />
+          <ProjectControls />
+          <ProjectAddFavorite />
+        </div>
+        <ProjectNav />
+        <div className="projectPage-main">
+          <Outlet />
+        </div>
       </div>
-      <div className="projectPage-main"></div>
-    </div>
+    </ProjectPageContext.Provider>
   );
 };
 
