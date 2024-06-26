@@ -13,6 +13,7 @@
 @import url("../components/Sidebar/sidebar.css");
 @import url("../components/Navbar/navbar.css");
 @import url("../components/Menu/menu.css");
+@import url("../components/Accordion/accordion.css");
 /* Pages */
 @import url("../pages/AuthPage/authPage.css");
 @import url("../pages/FirstProjectPage/firstProjectPage.css");

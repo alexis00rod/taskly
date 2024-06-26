@@ -9,3 +9,4 @@ export { default as Menu } from "./Menu/Menu";
 export { default as ButtonBack } from "./ButtonBack/ButtonBack";
 export { default as Layout } from "./Layout/Layout";
 export { default as PrivateRoute } from "./PrivateRoute/PrivateRoute";
+export { default as Accordion } from "./Accordion/Accordion";

@@ -1,0 +1,12 @@
+/* Base */
+.accordion {
+  @apply w-full flex flex-col;
+}
+/* Header */
+.accordion-header {
+  @apply w-full h-[50px] flex items-center gap-2;
+}
+/* Container */
+.accordion-expand {
+  @apply w-full select-none border-t border-customDarkTheme;
+}
