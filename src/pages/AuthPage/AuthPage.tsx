@@ -1,8 +1,9 @@
 import { RootState } from "redux/store";
 import { useSelector } from "react-redux";
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { Button, Icon } from "@components";
+import { Button } from "@components";
 import AuthImage from "@assets/images/auth-image.png";
+import { ButtonGoogleProvider } from "./components";
 
 const AuthPage = () => {
   const { pathname } = useLocation();
@@ -24,10 +25,7 @@ const AuthPage = () => {
           <Outlet />
           <div className="authPage-open">
             <p>O continúa con:</p>
-            <Button color="secondary" fullWidth>
-              <Icon type="brands" name="google" />
-              Google
-            </Button>
+            <ButtonGoogleProvider />
           </div>
           <div className="authPage-links">
             {pathname.includes("login") ? (
