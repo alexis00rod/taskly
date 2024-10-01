@@ -16,6 +16,7 @@ interface ButtonProps {
   disabled?: boolean;
   justify?: string;
   title?: string;
+  size?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -31,6 +32,7 @@ const Button: React.FC<ButtonProps> = ({
   disabled,
   justify,
   title,
+  size,
 }) => {
   const [ripples, setRipples] = useState<
     { x: number; y: number; size: number }[]
@@ -40,9 +42,9 @@ const Button: React.FC<ButtonProps> = ({
   const buttonStyle = () =>
     `btn btn-${justify ? justify : "center"} ${
       variant ? `btn-${variant}` : "btn-contained"
-    } ${color ? `btn-${color}` : "btn-primary"} ${margin ? margin : ""} ${
-      fullWidth ? "w-full" : ""
-    }`;
+    } ${color ? `btn-${color}` : "btn-primary"} ${margin ? margin : ""} btn-${
+      size ? size : "medium"
+    } ${fullWidth ? "w-full" : ""}`;
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     createEffect(event, buttonRef, setRipples);
