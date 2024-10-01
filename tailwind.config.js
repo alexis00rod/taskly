@@ -26,6 +26,11 @@ export default {
         customPinkLight: "#ffc2c2",
         customPink: "#ffb3b3",
         customPinkDark: "#cc8f8f",
+        // Red
+        customRedExtraLight: "#f1b8b3",
+        customRedLight: "#e37167",
+        customRed: "#dc4e41",
+        customRedDark: "#b03e34",
         // Gray
         customGrayExtraLight: "#d9d9da",
         customGrayLight: "#b2b4b5",
