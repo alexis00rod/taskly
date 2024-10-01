@@ -1,6 +1,16 @@
 /* Base */
 .btn {
-  @apply relative h-[36px] flex items-center flex-none gap-[8px] leading-4 rounded-md duration-200 cursor-pointer overflow-hidden outline-none;
+  @apply relative flex items-center flex-none gap-[8px] leading-4 rounded-md duration-200 cursor-pointer overflow-hidden outline-none;
+}
+/* Size */
+.btn-extraSmall {
+  @apply h-[22px];
+}
+.btn-small {
+  @apply h-[28px];
+}
+.btn-medium {
+  @apply h-[36px];
 }
 /* Justify */
 .btn-center {
@@ -17,7 +27,13 @@
 .btn-contained {
   @apply lg:min-w-[180px] px-[15px] font-medium;
 }
-.btn-icon {
+.btn-icon.btn-extraSmall {
+  @apply w-[22px];
+}
+.btn-icon.btn-small {
+  @apply w-[28px];
+}
+.btn-icon.btn-medium {
   @apply w-[36px];
 }
 /* Colors */
@@ -39,6 +55,17 @@
   @apply bg-customGrayExtraLight hover:bg-customGrayLight text-customDarkTheme;
 }
 /* Error */
+.btn-contained.btn-error {
+  @apply bg-customRed text-customWhite hover:bg-customRedDark disabled:bg-customRedLight disabled:hover:disabled:bg-customRedLight;
+}
+.btn-icon.btn-error {
+  @apply bg-customRed text-customWhite hover:bg-customRedDark disabled:bg-customRedLight disabled:hover:disabled:bg-customRedLight;
+}
+/* Transparent */
+.btn-transparent {
+  @apply bg-transparent text-customDarkTheme hover:bg-customGrayExtraLight;
+  /* @apply bg-customWhite text-customDarkTheme hover:bg-customGrayExtraLight/50; */
+}
 
 /* Ripple effect */
 .ripple-container {
