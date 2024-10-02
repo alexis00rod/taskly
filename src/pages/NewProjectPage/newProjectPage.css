@@ -2,7 +2,7 @@
   @apply fixed top-0 left-0 w-full h-full p-[32px] flex flex-col bg-customWhite md:bg-customLightTheme select-none slideInUp;
 }
 .newProjectPage-form {
-  @apply w-full md:w-[480px] h-full md:h-max mt-[10vh] mx-auto p-10 flex flex-col items-center gap-4 flex-none bg-customWhite md:rounded-md md:shadow-sm md:shadow-customDarkTheme/30;
+  @apply w-full md:w-[480px] h-full md:h-max mt-[10vh] mx-auto p-10 flex flex-col gap-4 flex-none bg-customWhite md:rounded-md md:shadow-sm md:shadow-customDarkTheme/30;
 }
 .newProjectPage-form h2 {
   @apply w-full mb-2 font-semibold text-3xl text-center;
