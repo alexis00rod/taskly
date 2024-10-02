@@ -31,6 +31,11 @@ export default {
         customRedLight: "#e37167",
         customRed: "#dc4e41",
         customRedDark: "#b03e34",
+        // Green
+        customGreenExtraLight: "#c7dfd4",
+        customGreenLight: "#90bfa9",
+        customGreen: "#74af93",
+        customGreenDark: "#5d8c76",
         // Gray
         customGrayExtraLight: "#d9d9da",
         customGrayLight: "#b2b4b5",
