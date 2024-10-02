@@ -10,8 +10,9 @@ import {
 interface TextfieldProps {
   children: ReactNode;
   id: string;
+  margin?: "none" | "small" | "medium" | "large";
+  size?: null | "small" | "medium" | "large";
   error?: boolean;
-  margin?: string;
 }
 
 interface TextfieldComponent extends React.FC<TextfieldProps> {
@@ -21,16 +22,39 @@ interface TextfieldComponent extends React.FC<TextfieldProps> {
   Validation: typeof TextfieldValidation;
 }
 
-const Textfield: TextfieldComponent = ({ children, id, error, margin }) => {
+const Textfield: TextfieldComponent = ({
+  children,
+  id,
+  error,
+  margin = "large",
+  size = "medium",
+}) => {
   const [focus, setFocus] = useState<boolean>(false);
+
+  const textfieldSize = {
+    small: "textfield-small",
+    medium: "textfield-medium",
+    large: "textfield-large",
+  };
+
+  const textfieldMargin = {
+    none: "margin-none",
+    small: "margin-small",
+    medium: "margin-medium",
+    large: "margin-large",
+  };
+
+  const textfieldClasses = [
+    "textfield",
+    size !== null && textfieldSize[size],
+    margin ? textfieldMargin[margin] : "",
+    focus ? "focus" : "",
+    error ? "error" : "",
+  ];
 
   return (
     <TextfieldContext.Provider value={{ id, setFocus }}>
-      <div
-        className={`textfield ${margin ? margin : "my-[22px]"} ${
-          focus ? "focus" : ""
-        } ${error ? "error" : ""}`}
-      >
+      <div className={textfieldClasses.filter(Boolean).join(" ")}>
         {children}
       </div>
     </TextfieldContext.Provider>

@@ -1,14 +1,30 @@
 /* Base */
 .textfield {
-  @apply relative w-full flex flex-col;
+  @apply relative flex flex-col;
 }
+.textfield.margin-none {
+  @apply my-0;
+}
+.textfield.margin-large {
+  @apply my-[22px];
+}
+
 /* Label */
 .textfield-label {
-  @apply absolute top-0 left-[10px] h-[36px] px-[5px] flex items-center transition-transform cursor-text select-none truncate;
+  @apply absolute top-0 left-[10px]  px-[5px] flex items-center transition-transform cursor-text select-none truncate;
 }
 /* Input */
 .textfield-input {
-  @apply w-full h-[36px] flex flex-none px-[6px] transition-colors outline-none border bg-customWhite rounded-md;
+  @apply flex flex-none px-[6px] transition-colors outline-none border bg-customWhite rounded-md;
+}
+/* Size */
+.textfield-small .textfield-label,
+.textfield-small .textfield-input {
+  @apply h-[24px];
+}
+.textfield-medium .textfield-label,
+.textfield-medium .textfield-input {
+  @apply h-[36px];
 }
 /* Is focus */
 .textfield.focus .textfield-label {
