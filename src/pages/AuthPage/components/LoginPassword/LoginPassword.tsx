@@ -63,6 +63,7 @@ const LoginPassword = () => {
           name="email"
           value={password}
           onChange={handlePassword}
+          fullWidth
         />
         <Textfield.Validation>
           {(passwordError.includes("password-empty") &&

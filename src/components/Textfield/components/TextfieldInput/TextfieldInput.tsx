@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTextfieldContext } from "../../TextfieldContext";
 
 interface TextfieldInputProps {
@@ -8,6 +8,7 @@ interface TextfieldInputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   autoFocus?: boolean;
   outlined?: boolean;
+  fullWidth?: boolean;
 }
 
 const TextfieldInput: React.FC<TextfieldInputProps> = ({
@@ -17,9 +18,17 @@ const TextfieldInput: React.FC<TextfieldInputProps> = ({
   onChange,
   autoFocus = false,
   outlined = true,
+  fullWidth = false,
 }) => {
+  const [textfieldWidth, setTextfieldWidth] = useState<number>(value.length);
   const { id, setFocus } = useTextfieldContext();
   const textfieldInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (value.length * 10 <= 320) {
+      setTextfieldWidth(value.length * 10);
+    }
+  }, [value]);
 
   const handleFocus = () => {
     setFocus(true);
@@ -48,8 +57,12 @@ const TextfieldInput: React.FC<TextfieldInputProps> = ({
       className={`textfield-input ${
         outlined
           ? "border-customDarkTheme"
-          : "border-transparent hover:border-customDarkTheme"
+          : "bg-transparent hover:bg-customWhite border-transparent hover:border-customDarkTheme"
       }`}
+      style={{
+        width: `${fullWidth ? "100%" : `${textfieldWidth}px`}`,
+        minWidth: fullWidth ? "auto" : "150px",
+      }}
       onFocus={handleFocus}
       onBlur={handleNoFocus}
       ref={textfieldInputRef}

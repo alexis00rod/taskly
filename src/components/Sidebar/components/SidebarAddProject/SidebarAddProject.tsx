@@ -59,12 +59,13 @@ const SidebarAddProject: React.FC = () => {
       className="sidebar-addProject"
     >
       <Icon name="folder" />
-      <Textfield id="project" margin="m-0">
+      <Textfield id="project" margin="none">
         <Textfield.Input
           name="project"
           value={project}
           onChange={handleProject}
           autoFocus
+          fullWidth
         />
       </Textfield>
     </form>

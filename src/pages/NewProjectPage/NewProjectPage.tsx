@@ -60,6 +60,7 @@ const NewProjectPage: React.FC = () => {
             value={name}
             onChange={handleName}
             autoFocus
+            fullWidth
           />
           <Textfield.Validation>
             {nameError.includes("name-empty") &&

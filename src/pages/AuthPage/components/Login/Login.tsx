@@ -53,7 +53,12 @@ const Login: React.FC = () => {
         }
       >
         <Textfield.Label>Introduce tu correo electrónico</Textfield.Label>
-        <Textfield.Input name="email" value={login} onChange={handleLogin} />
+        <Textfield.Input
+          name="email"
+          value={login}
+          onChange={handleLogin}
+          fullWidth
+        />
         <Textfield.Validation>
           {(loginError.includes("email-empty") &&
             "Por favor, ingresa tu correo electrónico.") ||

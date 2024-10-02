@@ -52,7 +52,12 @@ const Signup: React.FC = () => {
       <h3>Regístrate para continuar</h3>
       <Textfield id="email" error={signupError.length > 0}>
         <Textfield.Label>Introduce tu correo electrónico</Textfield.Label>
-        <Textfield.Input name="email" value={signup} onChange={handleSignup} />
+        <Textfield.Input
+          name="email"
+          value={signup}
+          onChange={handleSignup}
+          fullWidth
+        />
         <Textfield.Validation>
           {(signupError.includes("email-empty") &&
             "Por favor, ingresa tu correo electrónico.") ||
