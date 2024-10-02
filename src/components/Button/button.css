@@ -61,6 +61,13 @@
 .btn-icon.btn-error {
   @apply bg-customRed text-customWhite hover:bg-customRedDark disabled:bg-customRedLight disabled:hover:disabled:bg-customRedLight;
 }
+/* Success */
+.btn-contained.btn-success {
+  @apply bg-customGreen text-customWhite hover:bg-customGreenDark disabled:bg-customGreenLight disabled:hover:disabled:bg-customGreenLight;
+}
+.btn-icon.btn-success {
+  @apply bg-customGreen text-customWhite hover:bg-customGreenDark disabled:bg-customGreenLight disabled:hover:disabled:bg-customGreenLight;
+}
 /* Transparent */
 .btn-transparent {
   @apply bg-transparent text-customDarkTheme hover:bg-customGrayExtraLight;
