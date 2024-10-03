@@ -10,3 +10,7 @@ export { default as ButtonBack } from "./ButtonBack/ButtonBack";
 export { default as Layout } from "./Layout/Layout";
 export { default as PrivateRoute } from "./PrivateRoute/PrivateRoute";
 export { default as Accordion } from "./Accordion/Accordion";
+
+export { default as InputRadio } from "./InputRadio/InputRadio";
+export { default as TaskItem } from "./TaskItem/TaskItem";
+export { default as InputDate } from "./InputDate/InputDate";

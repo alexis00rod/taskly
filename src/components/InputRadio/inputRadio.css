@@ -1,0 +1,12 @@
+.inputRadio {
+  @apply w-full h-full flex items-center cursor-pointer;
+}
+.inputRadio input {
+  @apply hidden;
+}
+.inputRadio-checkmark {
+  @apply w-[36px] h-full flex items-center justify-center flex-none;
+}
+.inputRadio-label {
+  @apply h-full px-[4px] flex items-center grow;
+}
